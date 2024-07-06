@@ -1,0 +1,18 @@
+---
+services:
+  ardour:
+    image: lscr.io/linuxserver/ardour:latest
+    container_name: ardour
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/EST
+      - SUBFOLDER=/ #optional
+    volumes:
+      - /home/owner/music/production/config:/config
+    ports:
+      - 3000:3000 #optional
+      - 3001:3001 #optional
+    devices:
+      - /dev/snd:/dev/snd # Map sound devices to container
+    restart: unless-stopped
