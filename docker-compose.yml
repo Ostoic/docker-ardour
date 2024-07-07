@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/EST
+      - TZ=America/Toronto
       - SUBFOLDER=/ #optional
     volumes:
       - /home/owner/music/production/config:/config
